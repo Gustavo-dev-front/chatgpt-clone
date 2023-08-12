@@ -81,16 +81,16 @@ body {
   pointer-events: none;
 }
 
-.message.bot {
+.message.chatbot {
   background-color: var(--bot-chat-bg);
 }
 
-.message.bot .typing-animation {
+.message.chatbot .typing-animation {
   display: flex;
   gap: 5px;
 }
 
-.message.bot .typing-dot {
+.message.chatbot .typing-dot {
   height: 7px;
   width: 7px;
   opacity: 0.7;
@@ -114,12 +114,13 @@ body {
   }
 }
 
-.message.bot:hover:not(:has(.typing-animation)) span.material-symbols-outlined {
+.message.chatbot:hover:not(:has(.typing-animation))
+  span.material-symbols-outlined {
   visibility: visible;
   pointer-events: auto;
 }
 
-#input-box {
+#container-input-box {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -131,12 +132,19 @@ body {
   border-top: 1px solid var(--bot-chat-border);
 }
 
-#input-box textarea {
-  padding: 15px;
+#container-input-box .input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+#container-input-box .input-box textarea {
+  padding: 15px 45px 15px 15px;
   height: 55px;
   resize: none;
   width: 100%;
-  max-width: 800px;
   background-color: var(--bot-chat-bg);
   color: var(--text-color);
   border: none;
@@ -144,14 +152,43 @@ body {
   outline: none;
 }
 
-#input-box textarea::placeholder {
+#container-input-box .input-box span {
+  position: absolute;
+  right: 10px;
+  color: var(--icon-color);
+  cursor: pointer;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#container-input-box .input-box textarea:valid + span {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#container-input-box textarea::placeholder {
   color: var(--placeholder-color);
 }
 
-#input-box span {
+#container-input-box .controls {
+  display: flex;
+  gap: 10px;
+}
+
+#container-input-box .controls span {
   background-color: var(--bot-chat-bg);
   padding: 15px;
   border-radius: 4px;
   color: var(--icon-color);
   cursor: pointer;
+}
+
+.empty-history {
+  position: fixed;
+  max-width: 20ch;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--placeholder-color);
+  font-size: 2rem;
 }

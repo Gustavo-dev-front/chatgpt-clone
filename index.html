@@ -18,42 +18,17 @@
 
   <div id="chat-container">
     <div id="chat-box">
-      <div class="message user">
-        <div class="content">
-          <picture><img src="./images/user.jpg" alt="User image"></picture>
-          <p>Hello CHATGPT, how are you?</p>
-        </div>
-      </div>
-
-      <div class="message bot">
-        <div class="content">
-          <picture><img src="./images/chatbot.jpg" alt="Chatbot image"></picture>
-          <p>Hello user, i'm fine and you?</p>
-          <span class="material-symbols-outlined">
-            content_copy
-          </span>
-        </div>
-      </div>
-
-      <div class="message bot">
-        <div class="content">
-          <picture><img src="./images/chatbot.jpg" alt="Chatbot image"></picture>
-          <p class="typing-animation">
-            <span class="typing-dot" style="--delay: 0.2s"></span>
-            <span class="typing-dot" style="--delay: 0.3s"></span>
-            <span class="typing-dot" style="--delay: 0.4s"></span>
-          </p>
-          <span class="material-symbols-outlined">
-            content_copy
-          </span>
-        </div>
-      </div>
     </div>
 
-    <div id="input-box">
-      <textarea placeholder="Envie sua mensagem aqui"></textarea>
-      <span class="material-symbols-outlined">light_mode</span>
-      <span class="material-symbols-outlined">delete</span>
+    <div id="container-input-box">
+      <div class="input-box">
+        <textarea placeholder="Envie sua mensagem aqui" required></textarea>
+        <span class="material-symbols-outlined btn-send">send</span>
+      </div>
+      <div class="controls">
+        <span class="material-symbols-outlined btn-mode">light_mode</span>
+        <span class="material-symbols-outlined btn-clear">delete</span>
+      </div>
     </div>
   </div>
 
